@@ -68,7 +68,15 @@ footer a:hover{color:var(--text)}
 <p>Privacy-first web services, running entirely inside the Tor network. No tracking, no accounts where possible.</p>
 <div class="status"><span class="pulse"></span><span id="statustext">Checking services...</span></div>
 </header>
-<div class="grid" id="grid"></div>
+<div class="grid" id="grid">
+<div class="card"><div class="icon" style="background:#e86a33">P</div><h2>Peka</h2><p>Microblogging social network. Post threads, follow people, chat via DM. A quiet corner of Tor.</p><div class="tags"><span class="tag">social</span><span class="tag">threads</span><span class="tag">dm</span></div><a class="visit" href="http://pekaheqjbfgs3neiuyllbenxw7yimcfjainydksvko3ywvzzdtygh4id.onion/">Visit Peka &rarr;</a><div class="addr" title="Click to copy" onclick="copyAddr(this)">pekaheqjbfgs3neiuyllbenxw7yimcfjainydksvko3ywvzzdtygh4id.onion/</div></div>
+<div class="card"><div class="icon" style="background:#6366f1">A</div><h2>Aeterra</h2><p>Vanity .onion address generator plus free static web hosting on Tor. Bring a prefix, get an address.</p><div class="tags"><span class="tag">vanity</span><span class="tag">hosting</span><span class="tag">tools</span></div><a class="visit" href="http://aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion/">Visit Aeterra &rarr;</a><div class="addr" title="Click to copy" onclick="copyAddr(this)">aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion/</div></div>
+<div class="card"><div class="icon" style="background:#10b981">W</div><h2>Whisper</h2><p>Anonymous chat rooms. One tap to start, share the link, talk. Rooms vanish after 24h of silence.</p><div class="tags"><span class="tag">chat</span><span class="tag">anonymous</span></div><a class="visit" href="http://xuwuednndnfv4pvzaoyyrkhr3ektwysvrdqrpua6avrnjpxk4juqd6id.onion/">Visit Whisper &rarr;</a><div class="addr" title="Click to copy" onclick="copyAddr(this)">xuwuednndnfv4pvzaoyyrkhr3ektwysvrdqrpua6avrnjpxk4juqd6id.onion/</div></div>
+<div class="card"><div class="icon" style="background:#f59e0b">J</div><h2>Jot</h2><p>Anonymous pastebin. Paste text or code, set an expiry, or burn it after a single read.</p><div class="tags"><span class="tag">pastebin</span><span class="tag">sharing</span></div><a class="visit" href="http://kt7i7eh5fmhhshnxvfi5ksjcvcvbgaqxyexkngezn6ppoo7gjdbvxkyd.onion/">Visit Jot &rarr;</a><div class="addr" title="Click to copy" onclick="copyAddr(this)">kt7i7eh5fmhhshnxvfi5ksjcvcvbgaqxyexkngezn6ppoo7gjdbvxkyd.onion/</div></div>
+<div class="card"><div class="icon" style="background:#38bdf8">S</div><h2>Snip</h2><p>URL shortener for onion addresses. Long .onion links become short, shareable ones.</p><div class="tags"><span class="tag">shortener</span><span class="tag">tools</span></div><a class="visit" href="http://e4xctjlb7tmlceor3o5u73pyewkfnbq3xoe5e3bpdu6tyhasefp7i7qd.onion/">Visit Snip &rarr;</a><div class="addr" title="Click to copy" onclick="copyAddr(this)">e4xctjlb7tmlceor3o5u73pyewkfnbq3xoe5e3bpdu6tyhasefp7i7qd.onion/</div></div>
+<div class="card"><div class="icon" style="background:#a78bfa">S</div><h2>Stroncius</h2><p>Anonymous AI chat. Talk to small local language models with no accounts and no logs.</p><div class="tags"><span class="tag">ai</span><span class="tag">chat</span></div><a class="visit" href="http://7dk2mu57tewvohy756lomgwpaqgre7x5jg47fwgqlwc3k5avcihbxlid.onion/">Visit Stroncius &rarr;</a><div class="addr" title="Click to copy" onclick="copyAddr(this)">7dk2mu57tewvohy756lomgwpaqgre7x5jg47fwgqlwc3k5avcihbxlid.onion/</div></div>
+<div class="card"><div class="icon" style="background:#f472b6">Q</div><h2>Qron</h2><p>QR code generator for onion addresses. Paste a .onion URL, get a scannable QR code.</p><div class="tags"><span class="tag">qr</span><span class="tag">tools</span></div><a class="visit" href="http://cedbjajfwaups32l6qxoqyqacypgso7ol5sdn5lusjbeh7dxd4xbjtid.onion/">Visit Qron &rarr;</a><div class="addr" title="Click to copy" onclick="copyAddr(this)">cedbjajfwaups32l6qxoqyqacypgso7ol5sdn5lusjbeh7dxd4xbjtid.onion/</div></div>
+</div>
 <section class="about">
 <h2>What is this?</h2>
 <p>A personal collection of web services hosted as <code>.onion</code> sites. They only exist inside Tor &mdash; you need <a href="https://www.torproject.org/download/" style="text-decoration:underline">Tor Browser</a> to visit them.</p>
@@ -81,26 +89,7 @@ OnionHub &mdash; a directory of personal onion services.<br>
 </footer>
 </div>
 <script>
-var services=[
-{n:"Peka",d:"Microblogging social network. Post threads, follow people, chat via DM. A quiet corner of Tor.",t:["social","threads","dm"],c:"#e86a33",u:"http://pekaheqjbfgs3neiuyllbenxw7yimcfjainydksvko3ywvzzdtygh4id.onion/"},
-{n:"Aeterra",d:"Vanity .onion address generator plus free static web hosting on Tor. Bring a prefix, get an address.",t:["vanity","hosting","tools"],c:"#6366f1",u:"http://aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion/"},
-{n:"Whisper",d:"Anonymous chat rooms. One tap to start, share the link, talk. Rooms vanish after 24h of silence.",t:["chat","anonymous"],c:"#10b981",u:"http://xuwuednndnfv4pvzaoyyrkhr3ektwysvrdqrpua6avrnjpxk4juqd6id.onion/"},
-{n:"Jot",d:"Anonymous pastebin. Paste text or code, set an expiry, or burn it after a single read.",t:["pastebin","sharing"],c:"#f59e0b",u:"http://kt7i7eh5fmhhshnxvfi5ksjcvcvbgaqxyexkngezn6ppoo7gjdbvxkyd.onion/"},
-{n:"Snip",d:"URL shortener for onion addresses. Long .onion links become short, shareable ones.",t:["shortener","tools"],c:"#38bdf8",u:"http://e4xctjlb7tmlceor3o5u73pyewkfnbq3xoe5e3bpdu6tyhasefp7i7qd.onion/"},
-{n:"Stroncius",d:"Anonymous AI chat. Talk to small local language models with no accounts and no logs.",t:["ai","chat"],c:"#a78bfa",u:"http://7dk2mu57tewvohy756lomgwpaqgre7x5jg47fwgqlwc3k5avcihbxlid.onion/"},
-{n:"Qron",d:"QR code generator for onion addresses. Paste a .onion URL, get a scannable QR code.",t:["qr","tools"],c:"#f472b6",u:"http://cedbjajfwaups32l6qxoqyqacypgso7ol5sdn5lusjbeh7dxd4xbjtid.onion/"}
-];
-var grid=document.getElementById('grid');
-services.forEach(function(s){
-var el=document.createElement('div');el.className='card';
-var tags=s.t.map(function(t){return '<span class="tag">'+t+'</span>'}).join('');
-el.innerHTML='<div class="icon" style="background:'+s.c+'">'+s.n[0]+'</div>'
-+'<h2>'+s.n+'</h2><p>'+s.d+'</p>'
-+'<div class="tags">'+tags+'</div>'
-+'<a class="visit" href="'+s.u+'">Visit '+s.n+' &rarr;</a>'
-+'<div class="addr" title="Click to copy" onclick="copyAddr(this)">'+s.u.replace('http://','')+'</div>';
-grid.appendChild(el);
-});
+/* cards server-rendered */
 function copyAddr(el){
 var t=el.textContent;
 try{navigator.clipboard.writeText('http://'+t);}catch(e){}
