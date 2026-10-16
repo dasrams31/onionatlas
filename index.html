@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A collection of privacy-first web services running on the Tor network: social network, onion domain generator, anonymous chat, pastebin, and URL shortener.">
+<title>OnionHub - Privacy tools on Tor</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0d0e;--panel:#151517;--panel2:#1c1c1f;--border:#232326;--border2:#323237;
+--text:#f4f4f5;--muted:#9c9ca6;--faint:#63636c;--acc:#8ab4ff;--green:#34d399}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,
+"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;font-size:15px;
+-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;min-height:100vh;
+display:flex;flex-direction:column}
+header{padding:56px 0 12px;text-align:center}
+header .kicker{font-size:12px;font-weight:700;letter-spacing:.12em;
+text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+header h1{font-size:38px;font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+header h1 .dot{color:var(--faint)}
+header p{color:var(--muted);font-size:15.5px;max-width:520px;margin:0 auto}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+background:var(--panel);border:1px solid var(--border);border-radius:999px;
+padding:8px 18px;font-size:13px;color:var(--muted)}
+.status .pulse{width:8px;height:8px;border-radius:50%;background:var(--green);
+animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:32px 0}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:18px;
+padding:24px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--muted);transform:translateY(-2px)}
+.card .icon{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;
+justify-content:center;font-size:21px;font-weight:800;margin-bottom:16px;color:#fff}
+.card h2{font-size:18px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.card p{color:var(--muted);font-size:13.5px;flex:1;margin-bottom:18px}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.card .tag{font-size:11px;font-weight:700;color:var(--faint);background:var(--bg);
+border:1px solid var(--border);border-radius:6px;padding:3px 8px}
+.visit{display:flex;align-items:center;justify-content:center;gap:8px;
+background:var(--text);color:#0d0d0e;font-weight:700;font-size:14.5px;
+border-radius:12px;padding:13px;min-height:50px}
+.visit:hover{opacity:.9}
+.addr{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;
+color:var(--faint);text-align:center;margin-top:10px;word-break:break-all;
+cursor:pointer}
+.addr:hover{color:var(--acc)}
+section.about{background:var(--panel);border:1px solid var(--border);
+border-radius:18px;padding:28px;margin-bottom:32px}
+section.about h2{font-size:16px;font-weight:800;margin-bottom:10px}
+section.about p{color:var(--muted);font-size:14px;margin-bottom:10px}
+section.about p:last-child{margin-bottom:0}
+section.about code{font-family:ui-monospace,Menlo,Consolas,monospace;
+font-size:12.5px;background:var(--bg);padding:2px 7px;border-radius:6px;color:var(--text)}
+footer{margin-top:auto;padding:28px 0 36px;text-align:center;color:var(--faint);font-size:12.5px}
+footer a{color:var(--muted);font-weight:600}
+footer a:hover{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">Tor Hidden Services</div>
+<h1>OnionHub<span class="dot">.</span></h1>
+<p>Privacy-first web services, running entirely inside the Tor network. No tracking, no accounts where possible.</p>
+<div class="status"><span class="pulse"></span><span id="statustext">Checking services...</span></div>
+</header>
+<div class="grid" id="grid"></div>
+<section class="about">
+<h2>What is this?</h2>
+<p>A personal collection of web services hosted as <code>.onion</code> sites. They only exist inside Tor &mdash; you need <a href="https://www.torproject.org/download/" style="text-decoration:underline">Tor Browser</a> to visit them.</p>
+<p>Everything here runs on minimal infrastructure: no JavaScript frameworks, no third-party assets, no analytics. Just the service.</p>
+</section>
+<footer>
+OnionHub &mdash; a directory of personal onion services.<br>
+<span id="year"></span> &middot; Built for Tor.
+</footer>
+</div>
+<script>
+var services=[
+{n:"Peka",d:"Microblogging social network. Post threads, follow people, chat via DM. A quiet corner of Tor.",t:["social","threads","dm"],c:"#e86a33",u:"http://pekaheqjbfgs3neiuyllbenxw7yimcfjainydksvko3ywvzzdtygh4id.onion/"},
+{n:"Aeterra",d:"Vanity .onion address generator plus free static web hosting on Tor. Bring a prefix, get an address.",t:["vanity","hosting","tools"],c:"#6366f1",u:"http://aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion/"},
+{n:"Whisper",d:"Anonymous chat rooms. One tap to start, share the link, talk. Rooms vanish after 24h of silence.",t:["chat","anonymous"],c:"#10b981",u:"http://xuwuednndnfv4pvzaoyyrkhr3ektwysvrdqrpua6avrnjpxk4juqd6id.onion/"},
+{n:"Jot",d:"Anonymous pastebin. Paste text or code, set an expiry, or burn it after a single read.",t:["pastebin","sharing"],c:"#f59e0b",u:"http://kt7i7eh5fmhhshnxvfi5ksjcvcvbgaqxyexkngezn6ppoo7gjdbvxkyd.onion/"},
+{n:"Snip",d:"URL shortener for onion addresses. Long .onion links become short, shareable ones.",t:["shortener","tools"],c:"#38bdf8",u:"http://e4xctjlb7tmlceor3o5u73pyewkfnbq3xoe5e3bpdu6tyhasefp7i7qd.onion/"}
+];
+var grid=document.getElementById('grid');
+services.forEach(function(s){
+var el=document.createElement('div');el.className='card';
+var tags=s.t.map(function(t){return '<span class="tag">'+t+'</span>'}).join('');
+el.innerHTML='<div class="icon" style="background:'+s.c+'">'+s.n[0]+'</div>'
++'<h2>'+s.n+'</h2><p>'+s.d+'</p>'
++'<div class="tags">'+tags+'</div>'
++'<a class="visit" href="'+s.u+'">Visit '+s.n+' &rarr;</a>'
++'<div class="addr" title="Click to copy" onclick="copyAddr(this)">'+s.u.replace('http://','')+'</div>';
+grid.appendChild(el);
+});
+function copyAddr(el){
+var t=el.textContent;
+try{navigator.clipboard.writeText('http://'+t);}catch(e){}
+var o=el.textContent;el.textContent='Copied!';
+setTimeout(function(){el.textContent=o;},1500);
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('statustext').textContent='5 services online';
+</script>
+</body>
+</html>
