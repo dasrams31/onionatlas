@@ -85,7 +85,8 @@ var services=[
 {n:"Aeterra",d:"Vanity .onion address generator plus free static web hosting on Tor. Bring a prefix, get an address.",t:["vanity","hosting","tools"],c:"#6366f1",u:"http://aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion/"},
 {n:"Whisper",d:"Anonymous chat rooms. One tap to start, share the link, talk. Rooms vanish after 24h of silence.",t:["chat","anonymous"],c:"#10b981",u:"http://xuwuednndnfv4pvzaoyyrkhr3ektwysvrdqrpua6avrnjpxk4juqd6id.onion/"},
 {n:"Jot",d:"Anonymous pastebin. Paste text or code, set an expiry, or burn it after a single read.",t:["pastebin","sharing"],c:"#f59e0b",u:"http://kt7i7eh5fmhhshnxvfi5ksjcvcvbgaqxyexkngezn6ppoo7gjdbvxkyd.onion/"},
-{n:"Snip",d:"URL shortener for onion addresses. Long .onion links become short, shareable ones.",t:["shortener","tools"],c:"#38bdf8",u:"http://e4xctjlb7tmlceor3o5u73pyewkfnbq3xoe5e3bpdu6tyhasefp7i7qd.onion/"}
+{n:"Snip",d:"URL shortener for onion addresses. Long .onion links become short, shareable ones.",t:["shortener","tools"],c:"#38bdf8",u:"http://e4xctjlb7tmlceor3o5u73pyewkfnbq3xoe5e3bpdu6tyhasefp7i7qd.onion/"},
+{n:"Oracle",d:"Anonymous AI chat. Talk to small local language models with no accounts and no logs.",t:["ai","chat"],c:"#a78bfa",u:"http://7dk2mu57tewvohy756lomgwpaqgre7x5jg47fwgqlwc3k5avcihbxlid.onion/"}
 ];
 var grid=document.getElementById('grid');
 services.forEach(function(s){
@@ -105,7 +106,7 @@ var o=el.textContent;el.textContent='Copied!';
 setTimeout(function(){el.textContent=o;},1500);
 }
 document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('statustext').textContent='5 services online';
+document.getElementById('statustext').textContent='6 services online';
 </script>
 </body>
 </html>
