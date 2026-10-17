@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""OnionHub static server: HTTP/1.1 keep-alive + gzip for fast Tor delivery."""
+"""OnionAtlas static server: HTTP/1.1 keep-alive + gzip for fast Tor delivery."""
 
 import gzip
 import os
@@ -17,7 +17,7 @@ MIMES = {".html": "text/html; charset=utf-8",
 
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = "OnionHub/1.0"
+    server_version = "OnionAtlas/1.0"
     protocol_version = "HTTP/1.1"
 
     def do_GET(self):
@@ -65,5 +65,5 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
-    print("OnionHub on 127.0.0.1:%d" % PORT, flush=True)
+    print("OnionAtlas on 127.0.0.1:%d" % PORT, flush=True)
     srv.serve_forever()
