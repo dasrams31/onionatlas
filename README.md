@@ -1,4 +1,4 @@
-# OnionHub
+# OnionAtlas
 
 Landing page directory for a collection of personal Tor hidden services.
 
