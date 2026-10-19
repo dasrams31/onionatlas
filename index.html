@@ -71,6 +71,9 @@ padding-top:5px;letter-spacing:.06em}
 margin-bottom:5px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .entry h3 .live{width:6px;height:6px;border-radius:50%;background:var(--green);
 flex:none}
+.entry h3 .soon{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+text-transform:uppercase;color:var(--brass);border:1px solid var(--brass);
+border-radius:4px;padding:3px 8px;flex:none}
 .entry p.desc{color:var(--muted);font-size:13.8px;line-height:1.6;
 margin-bottom:12px;max-width:460px}
 .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
@@ -92,6 +95,10 @@ font-weight:700;font-size:13.5px;color:var(--text);white-space:nowrap;
 padding:10px 2px}
 .entry .go .arr{display:inline-block;transition:transform .18s ease;color:var(--brass)}
 .entry .go:hover .arr{transform:translateX(5px)}
+.entry .go.off{color:var(--faint);cursor:default}
+.entry .go.off .arr{color:var(--faint)}
+.entry .go.off:hover{text-decoration:none}
+.entry .go.off:hover .arr{transform:none}
 .entry .go:hover{text-decoration:underline;text-decoration-color:var(--brass);
 text-underline-offset:4px}
 .entry .go:focus-visible,.copybtn:focus-visible{outline:2px solid var(--brass);
@@ -147,7 +154,7 @@ footer .fmeta{text-align:left}
 
 <div class="indexhead">
 <h2>Index</h2>
-<span class="count">07 entries</span>
+<span class="count">08 entries</span>
 </div>
 
 <main id="entries">
@@ -155,23 +162,23 @@ footer .fmeta{text-align:left}
 <div class="entry">
 <div class="num">01</div>
 <div class="body">
-<h3>Peka <span class="live" title="online"></span></h3>
+<h3>Peka <span class="soon">soon</span></h3>
 <p class="desc">Microblogging social network. Post threads, follow people, chat via DM. A quiet corner of Tor.</p>
 <div class="tags"><span class="tag">social</span><span class="tag">threads</span><span class="tag">dm</span></div>
 <div class="addr"><code>pekaheqjbfgs3neiuyllbenxw7yimcfjainydksvko3ywvzzdtygh4id.onion</code><button class="copybtn" data-addr="http://pekaheqjbfgs3neiuyllbenxw7yimcfjainydksvko3ywvzzdtygh4id.onion/">Copy</button></div>
 </div>
-<a class="go" href="http://pekaheqjbfgs3neiuyllbenxw7yimcfjainydksvko3ywvzzdtygh4id.onion/">Visit <span class="arr">&rarr;</span></a>
+<span class="go off">Coming soon</span>
 </div>
 
 <div class="entry">
 <div class="num">02</div>
 <div class="body">
-<h3>Aeterra <span class="live" title="online"></span></h3>
+<h3>Aeterra <span class="soon">soon</span></h3>
 <p class="desc">Vanity .onion address generator plus free static web hosting on Tor. Bring a prefix, get an address.</p>
 <div class="tags"><span class="tag">vanity</span><span class="tag">hosting</span><span class="tag">tools</span></div>
 <div class="addr"><code>aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion</code><button class="copybtn" data-addr="http://aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion/">Copy</button></div>
 </div>
-<a class="go" href="http://aeterramwgvpn4cfqyv5hjwxx7dlo4adpwyvfufrhxw5jtwxac3o6zad.onion/">Visit <span class="arr">&rarr;</span></a>
+<span class="go off">Coming soon</span>
 </div>
 
 <div class="entry">
@@ -229,6 +236,17 @@ footer .fmeta{text-align:left}
 <a class="go" href="http://cedbjajfwaups32l6qxoqyqacypgso7ol5sdn5lusjbeh7dxd4xbjtid.onion/">Visit <span class="arr">&rarr;</span></a>
 </div>
 
+<div class="entry">
+<div class="num">08</div>
+<div class="body">
+<h3>Senter <span class="live" title="online"></span></h3>
+<p class="desc">Search engine for the Tor network. Crawls .onion sites around the clock and indexes them for search.</p>
+<div class="tags"><span class="tag">search</span><span class="tag">crawler</span><span class="tag">discovery</span></div>
+<div class="addr"><code>llbu3yl7zu7fxfqalrttkcw4kumu2an4nlzwmbyk72qvwthirb7cnxyd.onion</code><button class="copybtn" data-addr="http://llbu3yl7zu7fxfqalrttkcw4kumu2an4nlzwmbyk72qvwthirb7cnxyd.onion/">Copy</button></div>
+</div>
+<a class="go" href="http://llbu3yl7zu7fxfqalrttkcw4kumu2an4nlzwmbyk72qvwthirb7cnxyd.onion/">Visit <span class="arr">&rarr;</span></a>
+</div>
+
 </main>
 
 <section class="about">
@@ -259,7 +277,7 @@ i.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild
 });
 });
 document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('statustext').textContent='7 services online';
+document.getElementById('statustext').textContent='6 services online';
 </script>
 </body>
 </html>
